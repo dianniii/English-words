@@ -1,0 +1,257 @@
+{
+    "words" : [
+    {
+        "id": "1",
+        "english": "forecast",
+        "transcription": "[ˈfɔːrkæst]",
+        "russian": "прогноз"
+    },
+    {
+        "id": "2",
+        "english": "mosquito",
+        "transcription": "[məˈskiː.təʊ]",
+        "russian": "комар"
+    },
+    {
+        "id": "3",
+        "english": "tornado",
+        "transcription": "[tɔːˈneɪ.dəʊ]",
+        "russian": "торнадо"
+    },
+    {
+        "id": "4",
+        "english": "scrooge",
+        "transcription": "[skruːdʒ]",
+        "russian": "скряга"
+    },
+    {
+        "id": "5",
+        "english": "cat",
+        "transcription": "[cæt]",
+        "russian": "кот"
+    },
+    {
+        "id": "6",
+        "english": "hang out",
+        "transcription": "|ˈhæŋ ˈaʊt|",
+        "russian": "тусоваться"
+    },
+    {
+        "id": "7",
+        "english": "girl",
+        "transcription": "[ɡɜːrl]",
+        "russian": "девочка"
+    },
+    {
+        "id": "8",
+        "english": "curious",
+        "transcription": "[ˈkjʊrɪəs]",
+        "russian": "любопытный "
+    },
+    {
+        "id": "9",
+        "english": "brother",
+        "transcription": "[brʌðə]",
+        "russian": "брат"
+    },
+    {
+        "id": "10",
+        "english": "wind",
+        "transcription": "[wɪnd]",
+        "russian": "ветер"
+    },
+    {
+        "id": "11",
+        "english": "murky",
+        "transcription": "[mɜːki]",
+        "russian": "мрачный"
+    },
+    {
+        "id": "12",
+        "english": "red",
+        "transcription": "[rɛd]",
+        "russian": "красный"
+    },
+    {
+        "id": "13",
+        "english": "dad",
+        "transcription": "[dæd]",
+        "russian": "отец"
+    },
+    {
+        "id": "14",
+        "english": "yellow",
+        "transcription": "[jɛləʊ]",
+        "russian": "желтый"
+    },
+    {
+        "id": "15",
+        "english": "pan",
+        "transcription": "[pæn]",
+        "russian": "сковорода"
+    },
+    {
+        "id": "16",
+        "english": "flor",
+        "transcription": "[flɔː]",
+        "russian": "пол"
+    },
+    {
+        "id": "17",
+        "english": "step",
+        "transcription": "[step]",
+        "russian": "шаг"
+    },
+    {
+        "id": "18",
+        "english": "more",
+        "transcription": "/mɔːr/ ",
+        "russian": "больше"
+    },
+    {
+        "id": "19",
+        "english": "blue",
+        "transcription": "[blu:]",
+        "russian": "голубой"
+    },
+    { 
+        "id": "20", 
+        "english": "tap",
+        "transcription": "[ tæp ]",
+        "russian": "постучать"
+    },
+    {
+        "id": "21",
+        "english": "telephone",
+        "transcription": "[ 'telifəun ]",
+        "russian": "телефон"
+    },
+    { 
+        "id": "22", 
+        "english": "knife", 
+        "transcription": "[ naif ]",
+        "russian": "нож"
+    },
+    {
+        "id": "23",
+        "english": "plane",
+        "transcription": "[ plein ]",
+        "russian": "самолет"
+    },
+    {
+        "id": "24",
+        "english": "photographer",
+        "transcription": "[ fə'tɔgrəfə ]",
+        "russian": "фотограф"
+    },
+    {
+        "id": "25",
+        "english": "reporter",
+        "transcription": "[ ri'pɔ:tə ]",
+        "russian": "репортер"
+    },
+    {
+        "id": "26",
+        "english": "postman",
+        "transcription": "[ 'pəustman ]",
+        "russian": "почтальон"
+    },
+    {
+        "id": "27",
+        "english": "cabbage",
+        "transcription": "[ 'kæbiʤ ]",
+        "russian": "капуста"
+    },
+    {
+        "id": "28",
+        "english": "fork",
+        "transcription": "[ fɔ:k ]",
+        "russian": "вилка"
+    },
+    {
+        "id": "29",
+        "english": "spoon",
+        "transcription": "[ spu:n ]",
+        "russian": "ложка"
+    },
+    {
+        "id": "30",
+        "english": "waiter",
+        "transcription": "[ 'weitə ]",
+        "russian": "официант"
+    },
+    {
+        "id": "31",
+        "english": "waitress",
+        "transcription": "[ 'weits ]",
+        "russian": "официантка"
+    },
+    {
+        "id": "32",
+        "english": "market",
+        "transcription": "[ 'mɑ:kit ]",
+        "russian": "рынок"
+    },
+    {
+        "id": "33",
+        "english": "actor",
+        "transcription": "[ 'æktə ]",
+        "russian": "актер"
+    },
+    {
+        "id": "34",
+        "english": "drugstore",
+        "transcription": "[ 'drʌg‚stɔ:r ]",
+        "russian": "аптека"
+    },
+    {
+        "id": "35",
+        "english": "pedestrian",
+        "transcription": "[ pi'destriən ]",
+        "russian": "пешеход"
+    },
+    {
+        "id": "36",
+        "english": "block",
+        "transcription": "[ blɔk ]",
+        "russian": "блок, квартал"
+    },
+    {
+        "id": "37",
+        "english": "bus",
+        "transcription": "[ bʌs ]",
+        "russian": "автобус"
+    },
+    {
+        "id": "38",
+        "english": "car",
+        "transcription": "[ kɑ: ]",
+        "russian": "машина"
+    },
+    {
+        "id": "39",
+        "english": "stadium",
+        "transcription": "[ 'steidjəm ]",
+        "russian": "стадион"
+    },
+    {
+        "id": "40",
+        "english": "street",
+        "transcription": "[ stri:t ]",
+        "russian": "улица"
+    },
+    {
+        "id": "41",
+        "english": "taxi",
+        "transcription": "[ 'tæksi ]",
+        "russian": "такси"
+    },
+    {
+        "id": "42",
+        "english": "tram",
+        "transcription": "[ træm ]",
+        "russian": "трамвай"
+    }]
+}
+
+

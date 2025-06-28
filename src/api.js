@@ -1,9 +1,9 @@
-    const API_BASE_URL = 'https://itgirlschool.justmakeit.ru/api';
+    const API_BASE_URL = 'http://localhost:3001/words';
     // нужно ли выделять файл или папку для константс?
 
     export const fetchWords = async () => {
     try {
-    const response = await fetch(`${API_BASE_URL}/words`);
+    const response = await fetch(`${API_BASE_URL}`);
 
     if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
