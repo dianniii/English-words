@@ -1,0 +1,84 @@
+.table{
+    width: 97%;
+    margin: 130px auto;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+.headerRow{
+    background-color: #ccd4a4;
+    color: #845404;
+}
+
+.headerCell{
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    text-align: left;
+    color: #4f4032;
+}
+
+.row{
+    transition: background-color 0.2s;
+    border: 1px solid #ddd;
+}
+
+.row:hover{
+    background-color: #F4F8D3;
+}
+
+.cell{
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+.buttonSave{
+    padding: 6px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    color: #4f4032;
+    border: 2px solid #88a763;
+    cursor: pointer;
+}
+.buttonSave:hover{
+    color: white;
+    background-color: #88a763;
+}
+.buttonSave:disabled {
+    background-color: #cccccc; 
+    cursor: not-allowed; 
+    opacity: 0.5; 
+}
+
+.buttonClose, .buttonDelete{
+    padding: 6px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    color: #4f4032;
+    border: 2px solid #845404;
+    cursor: pointer;
+}
+.buttonClose, .buttonDelete:hover{
+    background-color: #845404;
+    color: white;
+}
+.buttonEdit{
+    padding: 6px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    color: #4f4032;
+    border: 2px solid #f5b40d;
+    cursor: pointer;
+}
+.buttonEdit:hover{
+    background-color: #f5b40d;
+    color: white;
+}
+.invalid {
+  border: 2px solid red;
+  outline: none;
+}
+.loader {
+    text-align: center;
+    font-weight: bold;
+    color: #4f4032;
+}
