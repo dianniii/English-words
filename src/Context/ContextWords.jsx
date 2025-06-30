@@ -1,23 +1,28 @@
-// import React, { createContext } from 'react';
-// import { useFetchWords } from '../hooks/useFetchWords'
+import React from 'react';
+import useFetchWords from '../hooks/useFetchWords'; // импорт вашего хука
+import {ContextWords} from '../../const'; // импорт вашего контекста
 
-// export const ContextWords = createContext();
+const ContextWordsProvider = ({ children }) => {
+    const { words, loading, error, isUpdating, isAdding, isDeleting, updateExistingWord, addNewWord, setIsDelete } = useFetchWords();
 
-// const ContextWordsProvider = ({ children }) => {
-//   const { words, loading, error, setWords } = useFetchWords();
+    const data = {
+        words,
+        loading,
+        error,
+        isUpdating,
+        isAdding,
+        isDeleting,
+        updateExistingWord,
+        addNewWord,
+        setIsDelete
+    };
 
-//   const data = {
-//     words,
-//     loading,
-//     error,
-//     setWords
-//   };
+    return (
+        <ContextWords.Provider value={data}>
+            {children}
+        </ContextWords.Provider>
+    );
+};
 
-//   return (
-//     <ContextWords.Provider value={data}>
-//       {children}
-//     </ContextWords.Provider>
-//   );
-// };
+export default ContextWordsProvider;
 
-// export default ContextWordsProvider;

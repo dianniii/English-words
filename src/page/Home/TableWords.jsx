@@ -1,11 +1,12 @@
 import TableRow from "./TableRow";
 import styles from "./Table.module.css";
 import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
-import useFetchWords from "../../hooks/useFetchWords";
+import {useWordsContext} from "../../hooks/useWordsContext";
+
 
 
 function TableWords() {
-    const { words, loading } = useFetchWords();
+    const { words, loading } = useWordsContext();
 
     return (
         <table className={styles.table}>

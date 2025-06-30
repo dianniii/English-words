@@ -1,118 +1,95 @@
-import { useState } from "react";
-import styles from "./Table.module.css";
+import { useState } from 'react';
+import useFormValidation from '../../hooks/useFormValidation'; // Путь к вашему хуку
+import { useWordsContext } from '../../hooks/useWordsContext'; // Импорт контекста
+import styles from './Table.module.css';
 
 function TableRow({ word }) {
   const [isEditing, setIsEditing] = useState(false);
 
-  const [value, setValue] = useState({
+  const {
+    value,
+    errors,
+    validateValue,
+    handleChange,
+    resetErrors,
+    setValue,
+  } = useFormValidation({
+    id: word.id,
     english: word.english,
     transcription: word.transcription,
     russian: word.russian,
   });
 
-  const [errors, setErrors] = useState({
-    english: false,
-    transcription: false,
-    russian: false
-  });
-  // Проверка на пустоту
-  const isEmpty = (val) => !val.trim();
-
-  // Проверка: только английские буквы и пробелы
-  const isEnglish = (val) => /^[a-zA-Z\s]+$/.test(val);
-
-  // Проверка: отсутствие цифр
-  const hasNumbers = (val) => /\d/.test(val);
-
-  // функция для валидации всех полей
-  const validateValue = () => {
-    let newErrors = {
-      english: false,
-      transcription: false,
-      russian: false
-    };
-    let isValid = true;
-
-    // english
-    if (isEmpty(value.english) || !isEnglish(value.english) || hasNumbers(value.english)) {
-      newErrors.english = true;
-      isValid = false;
-    }
-
-    // transcription: без цифр*
-    if (isEmpty(value.transcription) || hasNumbers(value.transcription)) {
-      newErrors.transcription = true;
-      isValid = false;
-    }
-
-    // translation: без цифр*
-    if (isEmpty(value.russian) || hasNumbers(value.russian)) {
-      newErrors.russian = true;
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
   const handleClose = () => {
     setIsEditing(false);
-    setValue({ ...word });
-    setErrors({
-      english: false,
-      transcription: false,
-      russian: false
+    setValue({ 
+      id: word.id,
+      english: word.english,
+      transcription: word.transcription,
+      russian: word.russian 
     });
+    resetErrors();
   };
 
-  const handleSave = () => {
+  const { updateExistingWord, setIsDelete } = useWordsContext();
+
+  const handleSave = async () => {
     if (validateValue()) {
-    console.log('Параметры формы:', value);
+      console.log('Параметры формы', value);
+
+      if (!value.id || isNaN(value.id)) {
+        console.error('ID невалидный или отсутствует:', value.id);
+        alert('Произошла ошибка: некорректный ID');
+        return;
+      }
+
+      try {
+        await updateExistingWord(value.id, value);
+        console.log('Изменения сохранены на сервере');
+      } catch (error) {
+        console.log('Ошибка при сохранении на сервере:', error);
+        alert('Произошла ошибка при сохранении на сервере. Пожалуйста, попробуйте снова.');
+        return;
+      }
+      
       setIsEditing(false);
-      setErrors({
-        english: false,
-        transcription: false,
-        russian: false
-      });
+      resetErrors();
     } else {
-      alert("Check the data accuracy: the 'english' field should contain only Latin letters, and all fields should not contain numbers.");
+      alert("Проверьте точность данных. Поле 'english' должно содержать только латинские буквы, а все поля не должны содержать цифры.");
     }
   };
 
   const handleEdit = () => {
     setIsEditing(true);
-  };
+  }; 
 
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setValue(prevValue => ({
-      ...prevValue,
-      [name]: value,
-    }));
-    // При каждом вводе сразу убирает ошибку если поле стало валидным
-    setErrors(prevErrors => ({
-      ...prevErrors,
-      [name]: false
-    }));
-  };
+  const handDelete = async ()=>{
+    const confirmDelete = window.confirm('Вы уверенны, что хотите удалить это слово?');
+    if(confirmDelete){
+      console.log('Удаляем слово с ID:', word.id);
+      try{
+        await setIsDelete (word.id);
+        console.log('Слово успешно удалено');
+      } catch (error){
+        console.log('Ошибка при удалении слова:', error);
+        alert ('Произошла ошибка при удалении. Пожалуйста, попробуйте сноваю');
+      }
+    }
+  }
 
-  const isAnyFieldEmpty = !value.english.trim() ||
-                          !value.transcription.trim() ||
-                          !value.russian.trim();
+  const isAnyFieldEmpty = !value.english.trim() || !value.transcription.trim() || !value.russian.trim();
+  const isEmpty = (val) => !val || !val.trim();
 
   return isEditing ? (
-    <tr className={styles.row}>
+    <tr className={styles.headerRow}>
       <td className={styles.headerCell}>
         <input
           type="text"
           value={value.english}
           name="english"
           onChange={handleChange}
-          className={
-            `${isEmpty(value.english) ? styles.invalid : ''}
-            ${errors.english ? styles.invalid : ''}`
-          }
-          placeholder="Only English letters"
+          className= {`${isEmpty(value.english) ? styles.invalid : ''}
+                        ${errors.english ? styles.invalid : ''}`}
         />
       </td>
       <td className={styles.headerCell}>
@@ -121,10 +98,8 @@ function TableRow({ word }) {
           value={value.transcription}
           name="transcription"
           onChange={handleChange}
-          className={
-            `${isEmpty(value.transcription) ? styles.invalid : ''}
-            ${errors.transcription ? styles.invalid : ''}`
-          }
+          className={`${isEmpty(value.transcription) ? styles.invalid : ''}
+                        ${errors.transcription ? styles.invalid : ''}`}
         />
       </td>
       <td className={styles.headerCell}>
@@ -133,17 +108,14 @@ function TableRow({ word }) {
           value={value.russian}
           name="russian"
           onChange={handleChange}
-          className={
-            `${isEmpty(value.russian) ? styles.invalid : ''}
-            ${errors.russian ? styles.invalid : ''}`
-          }
+          className={`${isEmpty(value.russian) ? styles.invalid : ''}
+                        ${errors.russian ? styles.invalid : ''}`}
         />
       </td>
       <td className={styles.headerCell}>
         <button
           className={styles.buttonSave}
           onClick={handleSave}
-          
           disabled={isAnyFieldEmpty}
         >Save</button>
         <button className={styles.buttonClose}
@@ -158,11 +130,13 @@ function TableRow({ word }) {
       <td className={styles.headerCell}>
         <button className={styles.buttonEdit}
                 onClick={handleEdit}>Edit</button>
-        <button className={styles.buttonDelete}>Delete</button>
+        <button className={styles.buttonDelete}
+                onClick={handDelete}>Delete</button>
       </td>
     </tr>
   );
 }
 
 export default TableRow;
+
 

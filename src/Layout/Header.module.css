@@ -15,14 +15,12 @@
     gap: 5px;
 }
 .title{
-    color: #4f4032;
     cursor: pointer;
 }
 .title:hover{
-    transform: scale(1.1);
-    color: #E9A319;
-}
-
+                transform: scale(1.1);
+                color: #E9A319;
+            }
 .logo{
     height: 60px;
     width: auto;
@@ -34,7 +32,6 @@
 .nav{
     display: flex;
     gap: 80px;
-    list-style: none;
 }
 .itemsNav{
     color: #4f4032;
@@ -42,9 +39,4 @@
 }
 .itemsNav:hover{
     color: #E9A319;
-}
-
-
-a{
-    text-decoration: none;
 }
