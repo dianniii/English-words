@@ -25,6 +25,9 @@
                 width: 100%;
                 margin-bottom: 15px;
 
+                input{
+                    width: 95%;
+                }
                 .subtitle {
                     font-weight: bold;
                     margin-bottom: 5px;
@@ -35,7 +38,7 @@
                     outline: none;
                 }
                 .error{
-                    color: #E9A319;
+                    color: $secondary-color;
                     font-weight: 600;
                 }
             }
