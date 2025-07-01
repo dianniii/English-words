@@ -14,7 +14,7 @@ const useFetchWords = () => {
             const wordsResult = await fetchWords();
             setWords(wordsResult);
         } catch (err) {
-            console.error('Error when loading words:', err);
+            console.error('Ошибка при загрузке слов:', err);
             setError(err);
         } finally {
             setLoading(false);
@@ -33,7 +33,7 @@ const useFetchWords = () => {
                 prevWords.map((word) => word.id === wordId ? updatedWord : word)
             );
         } catch (err) {
-            console.error('Error when updating word:', err);
+            console.error('Ошибка при обновлении word:', err);
             setError(err);
         } finally {
             setIsUpdating(false);
@@ -46,7 +46,7 @@ const useFetchWords = () => {
             await postWord(newWordData);
             await loadWords(); // Перезагрузка списка слов для таблицы
         } catch (err) {
-            console.error('Error when adding new word:', err);
+            console.error('Ошибка при добавлении нового слова:', err);
             setError(err);
         } finally {
             setIsAdding(false);
@@ -59,7 +59,7 @@ const useFetchWords = () => {
             await deleteWord(wordId);
             setWords((prevWords) => prevWords.filter((word) => word.id !== wordId));
         } catch (err) {
-            console.error('Error when deleting word:', err);
+            console.error('Ошибка при удалении word:', err);
             setError(err);
         } finally {
             setIsDeleting(false);

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import CardWrapper from "../../components/AppCardWrapper/AppWrapper";
 import WordCard from "../../components/AppWordCard/AppWordCard";
-import useFetchWords from '../../hooks/useFetchWords';
+import { useWordsContext } from '../../hooks/useWordsContext';
 
     const Carousel = () => {
       const [wordsLearned, setWordsLearned] = useState(0);
       const [index, setIndex] = useState(0);
-      const { words } = useFetchWords();
+      const { words } = useWordsContext();
 
       const handleViewTranslation = () =>
         setWordsLearned(prev => prev + 1);

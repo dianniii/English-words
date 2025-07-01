@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useFormValidation from '../../hooks/useFormValidation'; // Путь к вашему хуку
 import { useWordsContext } from '../../hooks/useWordsContext'; // Импорт контекста
-import styles from './Table.module.css';
+import styles from './Table.module.scss';
 
 function TableRow({ word }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -117,9 +117,9 @@ function TableRow({ word }) {
           className={styles.buttonSave}
           onClick={handleSave}
           disabled={isAnyFieldEmpty}
-        >Save</button>
+        >Сохранить</button>
         <button className={styles.buttonClose}
-                onClick={handleClose}>Close</button>
+                onClick={handleClose}>Закрыть</button>
       </td>
     </tr>
   ) : (
@@ -129,9 +129,9 @@ function TableRow({ word }) {
       <td className={styles.headerCell}>{value.russian}</td>
       <td className={styles.headerCell}>
         <button className={styles.buttonEdit}
-                onClick={handleEdit}>Edit</button>
+                onClick={handleEdit}>Изменить</button>
         <button className={styles.buttonDelete}
-                onClick={handDelete}>Delete</button>
+                onClick={handDelete}>Удалить</button>
       </td>
     </tr>
   );

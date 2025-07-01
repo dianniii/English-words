@@ -1,0 +1,51 @@
+@import '../styles/varibels';
+
+.headerConteiner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background-color: $background-color-light;
+
+    .conteinerLogo{
+    display: flex;
+    gap: 5px;
+
+    .logo{
+        height: 60px;
+        width: auto;
+        margin: auto 0;
+                
+        &:hover{
+            transform: scale(1.1);
+            }
+        }
+        
+        .title{
+            cursor: pointer;
+
+            &:hover{
+                    transform: scale(1.1);
+                    color: $color-orange;
+                    }
+            }
+    }
+    .nav{
+        display: flex;
+        gap: 80px;
+
+        .itemsNav{
+        color: $primary-color;
+        font-weight: 700;
+        
+        &:hover{
+            color: $color-orange;
+        }
+        }
+    }
+}

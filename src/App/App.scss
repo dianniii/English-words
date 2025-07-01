@@ -1,6 +1,7 @@
+    @import '../styles//varibels';
     body{
         h1{
-        color: #4f4032;
+        color: $primary-color;
         }
     a{
         text-decoration: none;

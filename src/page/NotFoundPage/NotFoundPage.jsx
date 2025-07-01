@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import notFoundPage from '../../assets/20.png';
-import styles from './NotFoundPage.module.css';
+import styles from './NotFoundPage.module.scss';
 import error from '../../assets/404.png';
 import { ROUTES } from '../../routes';
 
@@ -11,11 +11,11 @@ function NotFoundPage (){
             <div className={styles.infoError}>
                 <div>
                     <img src={error} alt="error404" />
-                    <h1>OOOps!</h1>
-                    <h2>Page Not Found</h2>
+                    <h1>Упссс!</h1>
+                    <h2>Страница не найдена</h2>
                 </div>
                 <Link to={ROUTES.HOME} >
-                    <button className={styles.backHome}>Back to homepage</button>
+                    <button className={styles.backHome}>Вернуться на главную</button>
                 </Link>
             </div>
             <img  className={styles.errorImg} src={notFoundPage} alt="page not found"/>

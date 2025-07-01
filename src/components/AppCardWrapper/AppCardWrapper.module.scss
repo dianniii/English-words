@@ -1,0 +1,57 @@
+@import '../../styles/varibels';
+
+.cardWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+
+    .cardControls{
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Расстояние между кнопками и children */
+    margin-bottom: 16px;
+
+        .onPrev{
+            color: $primary-color;
+            cursor: pointer;
+            background-color: $background-color-light;
+            border: 1px solid $border-color;
+
+            &:hover{
+                transform: scale(1.2);
+                border: 1px solid #4f4032;
+            }
+        }
+
+        .onNext{
+            color: $primary-color;
+            cursor: pointer;
+            background-color: $background-color-light;
+            border: 1px solid $border-color;
+            
+            &:hover{
+                transform: scale(1.2);
+                border: 1px solid $primary-color;
+            }
+        }
+    }
+    .result{
+        margin-bottom: 10px;
+        color: $primary-color;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .learned{
+        color: $primary-color;
+        font-weight: 600;
+    }
+    .loader {
+        display: block; 
+        text-align: center;
+        font-weight: bold;
+        color: $primary-color;
+    }
+}

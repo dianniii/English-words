@@ -1,8 +1,8 @@
 import { useState } from "react";
-import styles from "./AppWordCard.module.css";
+import styles from "./AppWordCard.module.scss";
 import Button from "../AppButton/AppButton";
 
-const WordCard = ({ word }) => { 
+const WordCard = ({ word, onViewTranslation }) => { 
     const [isButtonPressed, setIsButtonPressed] = useState(false);
 
     if (!word) {
@@ -13,6 +13,9 @@ const WordCard = ({ word }) => {
 
     const handleButtonClick = () => {
         setIsButtonPressed(!isButtonPressed);
+        if (!isButtonPressed) {
+            onViewTranslation(); // Увеличиваем счетчик слов, когда перевод показывается
+        }
     };
 
     return (
@@ -23,17 +26,18 @@ const WordCard = ({ word }) => {
                 <div>
                     <div className={styles.cardDetails}>{russian}</div>
                     <div className={styles.buttonWrapper}>
-                        <Button type='close' text="Close" onClick={handleButtonClick} />
+                        <Button type='close' text="Закрыть" onClick={handleButtonClick} />
                     </div>
                 </div>
             ) : (
-                <Button type='check' text="Check" onClick={handleButtonClick} />
+                <Button type='check' text="Проверить" onClick={handleButtonClick} />
             )}
         </div>
     );
 };
 
 export default WordCard;
+
 
 
 

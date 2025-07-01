@@ -1,13 +1,13 @@
-import styles from './AppCardWrapper.module.css';
-import useFetchWords from '../../hooks/useFetchWords';
+import styles from './AppCardWrapper.module.scss';
+import { useWordsContext } from '../../hooks/useWordsContext';
 
 const CardWrapper = ({ children, onPrev, onNext, currentIndex, total, wordsLearned }) => {
-  const { loading } = useFetchWords();
+  const { loading } = useWordsContext();
 
   return (
     <div className={styles.cardWrapper}>
       {loading ? (
-        <div className={styles.loader}>Loading...</div>
+        <div className={styles.loader}>Загрузка...</div>
       ) : (
         <>
           <div className={styles.cardControls}>
@@ -33,7 +33,7 @@ const CardWrapper = ({ children, onPrev, onNext, currentIndex, total, wordsLearn
             {currentIndex + 1}/{total}
           </div>
           <div className={styles.learned}>
-            Words learned per workout: {wordsLearned}
+            Слова, выученные за тренировку: {wordsLearned}
           </div>
         </>
       )}

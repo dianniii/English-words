@@ -1,0 +1,19 @@
+@import '../../styles/varibels';
+
+.errorBoundary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: $primary-color;
+
+    .errorMessage{
+    padding: 20px;
+    text-align: center;
+
+    h2{
+    margin: 0;
+    font-size: 24px;
+    }
+    }
+}
