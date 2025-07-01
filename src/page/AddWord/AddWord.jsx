@@ -4,7 +4,7 @@ import useFormValidation from '../../hooks/useFormValidation';
 import styles from './AddWord.module.scss';
 
 const AddWord = () => {
-    const { addNewWord, isAdding } = useWordsContext();
+    const { loading, addNewWord, isAdding } = useWordsContext();
     const [message, setMessage] = useState('');
     
     const initialState = {
@@ -46,6 +46,9 @@ const AddWord = () => {
     };
 
     return (
+        loading ? (
+            <AppLoader/>
+        ) : (
         <div className={styles.container}>
             <h1>Добавить слово</h1>
             <div className={styles.addWord}>
@@ -88,10 +91,11 @@ const AddWord = () => {
                             Добавить
                         </button>
                     </div>
-                </form> {/* Вывод сообщения об успехе */}
+                </form> 
             </div>
             {message && <p className={styles.message}>{message}</p>}
         </div>
+        )
     );
 };
 

@@ -1,5 +1,6 @@
 import styles from './AppCardWrapper.module.scss';
 import { useWordsContext } from '../../hooks/useWordsContext';
+import AppLoader from '../AppLoader/AppLoader';
 
 const CardWrapper = ({ children, onPrev, onNext, currentIndex, total, wordsLearned }) => {
   const { loading } = useWordsContext();
@@ -7,7 +8,7 @@ const CardWrapper = ({ children, onPrev, onNext, currentIndex, total, wordsLearn
   return (
     <div className={styles.cardWrapper}>
       {loading ? (
-        <div className={styles.loader}>Загрузка...</div>
+        <AppLoader />
       ) : (
         <>
           <div className={styles.cardControls}>

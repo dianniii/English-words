@@ -2,12 +2,13 @@ import TableRow from "./TableRow";
 import styles from "./Table.module.scss";
 import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
 import {useWordsContext} from "../../hooks/useWordsContext";
+import AppLoader from "../../components/AppLoader/AppLoader";
 
 
 
 function TableWords() {
     const { words, loading } = useWordsContext();
-
+    
     return (
         <table className={styles.table}>
             <thead>
@@ -21,7 +22,9 @@ function TableWords() {
             <tbody>
                 {loading ? (
                     <tr>
-                        <td colSpan="4" className={styles.loader}>Загрузка...</td>
+                        <td colSpan="4">
+                            <AppLoader />
+                        </td>
                     </tr>
                 ) : (
                     words.map((word) => (
