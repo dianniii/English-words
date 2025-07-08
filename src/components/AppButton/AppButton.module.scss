@@ -1,4 +1,4 @@
-@import '../../styles/varibels';
+@use '../../styles/varibels' as *;
 
 .check, .close {
     margin: 12px 0;

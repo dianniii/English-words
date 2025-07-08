@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import Header from '../Layout/Header'
+import Footer from '../Layout/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from '../routes';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
@@ -30,6 +31,7 @@ function App() {
             <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
           </Routes>
         </Suspense>
+      <Footer />
       </div>
       </ErrorBoundary>
     </Router>

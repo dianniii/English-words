@@ -1,4 +1,5 @@
-    @import '../styles//varibels';
+    @use '../styles//varibels' as *;
+
     body{
         h1{
         color: $primary-color;

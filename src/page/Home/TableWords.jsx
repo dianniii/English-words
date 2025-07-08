@@ -8,7 +8,7 @@ import AppLoader from "../../components/AppLoader/AppLoader";
 
 function TableWords() {
     const { words, loading } = useWordsContext();
-    
+
     return (
         <table className={styles.table}>
             <thead>

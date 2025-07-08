@@ -1,4 +1,4 @@
-@import '../styles/varibels';
+@use '../styles/varibels' as *;
 
 .headerConteiner{
     position: fixed;
@@ -48,4 +48,8 @@
         }
         }
     }
+    .active{
+            font-weight: 600;
+            color: $color-orange;
+        }
 }

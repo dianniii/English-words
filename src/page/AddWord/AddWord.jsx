@@ -36,11 +36,11 @@ const AddWord = () => {
 
         try {
             await addNewWord(newWordData); 
-            setMessage('Успешно добавлено!'); // Сообщение об успешном добавлении
+            setMessage('✅ Успешно добавлено!'); // Сообщение об успешном добавлении
             setValue(initialState); // Сбрасываем форму
             resetErrors(); // Сбрасываем ошибки
         } catch (error) {
-            setMessage('Произошла ошибка при добавлении слова.'); 
+            setMessage('❌ Произошла ошибка при добавлении слова.'); 
             console.log('Ошибка при сохранении на сервере:', error); // Обработка ошибки
         }
     };

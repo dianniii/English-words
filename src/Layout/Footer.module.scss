@@ -1,0 +1,12 @@
+@use '../styles/varibels' as *;
+
+.footer {
+  background-color: $background-color-light;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.text {
+  color: $primary-color;
+  font-size: 14px;
+}
