@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 import ContextWordsProvider from '../Context/ContextWords';
@@ -9,7 +9,7 @@ import AppLayout from '../Layout/AppLayout';
 import AppLoader from '../components/AppLoader/AppLoader';
    
 
-function App() {  
+function App() {   
   const AboutPage = React.lazy(() => import('../page/AboutPage/AboutPage'));
   const HomePage = React.lazy(() => import('../page/HomePage/HomePage'));
   const AddWordPage = React.lazy(() => import ('../page/AddWordPage/AddWordPage'));
