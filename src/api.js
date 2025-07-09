@@ -1,9 +1,9 @@
-const API_BASE_URL = 'http://localhost:3001/words';
+const API_BASE_URL = 'https://itgirlschool.justmakeit.ru/api';
 
 // Получение данных
 export const fetchWords = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}`);
+        const response = await fetch(`${API_BASE_URL}/words`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`); 
@@ -28,7 +28,7 @@ export const fetchWords = async () => {
 // Отправка нового слова
 export const postWord = async (newWordData) => {
     try {
-        const response = await fetch(`${API_BASE_URL}`, {
+        const response = await fetch(`${API_BASE_URL}/words/add`, {  // Исправил URL
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,12 +47,11 @@ export const postWord = async (newWordData) => {
         throw new Error(`Failed to create word: ${error.message}`);
     }
 };
-
 // удаление с сервера
 export const deleteWord = async (wordId) => {
     try {
         console.log('Attempting to delete word with ID:', wordId);
-        const response = await fetch(`${API_BASE_URL}/${wordId}`, {
+        const response = await fetch(`${API_BASE_URL}/words/${wordId}`, { // Исправил шаблонную строку
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -72,13 +71,12 @@ export const deleteWord = async (wordId) => {
 };
 
 // обновление данных
-export const putWord = async (updatedWordData, id) => {
+export const updateWord = async (updatedWordData, id) => {
     try {
-        // Преобразуем id в число
-        id = Number(id); 
+        id = Number(id);
 
-        const response = await fetch(`${API_BASE_URL}/${id}`, {
-            method: 'PUT',
+        const response = await fetch(`${API_BASE_URL}/words/${id}/update`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -91,11 +89,12 @@ export const putWord = async (updatedWordData, id) => {
 
         const newWord = await response.json();
         return newWord;
-        } catch (error) {
-        console.error('Error when posting word:', error);
-        throw new Error(`Failed to post word: ${error.message}`);
+    } catch (error) {
+        console.error('Error when updating word:', error);
+        throw new Error(`Failed to update word: ${error.message}`);
     }
 };
+
 
 
 

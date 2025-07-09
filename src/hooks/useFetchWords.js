@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchWords, putWord, postWord, deleteWord } from '../api';
+import { fetchWords, updateWord, postWord, deleteWord} from '../api';
 
 const useFetchWords = () => {
     const [words, setWords] = useState([]);
@@ -28,7 +28,7 @@ const useFetchWords = () => {
     const updateExistingWord = async (wordId, updatedWordData) => {
         setIsUpdating(true);
         try {
-            const updatedWord = await putWord(wordId, updatedWordData);
+            const updatedWord = await updateWord(wordId, updatedWordData);
             setWords((prevWords) => 
                 prevWords.map((word) => word.id === wordId ? updatedWord : word)
             );

@@ -18,6 +18,8 @@ function AppTableRow({ word }) {
     english: word.english,
     transcription: word.transcription,
     russian: word.russian,
+    tags: '', 
+    tags_json: ''
   });
 
   const handleClose = () => {
@@ -26,7 +28,9 @@ function AppTableRow({ word }) {
       id: word.id,
       english: word.english,
       transcription: word.transcription,
-      russian: word.russian 
+      russian: word.russian,
+      tags: '', 
+      tags_json: ''
     });
     resetErrors();
   };
