@@ -1,38 +1,38 @@
 import React, { Suspense } from 'react';
-import Header from '../Layout/Header'
-import Footer from '../Layout/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ROUTES } from '../routes';
+import { ROUTES } from '../constants/routes';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 import ContextWordsProvider from '../Context/ContextWords';
 import './App.scss';
 import '../styles/common.scss';
+import AppLayout from '../Layout/AppLayout';
+import AppLoader from '../components/AppLoader/AppLoader';
    
 
 function App() {  
-  const WordsCardList = React.lazy(() => import('../page/Words/WordsCardList'));
-  const TableWords = React.lazy(() => import('../page/Home/TableWords'));
-  const AddWord = React.lazy(() => import ('../page/AddWord/AddWord'));
-  const Carusel = React.lazy(() => import('../page/Training/AppCarousel'));
+  const AboutPage = React.lazy(() => import('../page/AboutPage/AboutPage'));
+  const HomePage = React.lazy(() => import('../page/HomePage/HomePage'));
+  const AddWordPage = React.lazy(() => import ('../page/AddWordPage/AddWordPage'));
+  const TrainingPage = React.lazy(() => import('../page/TrainingPage/TrainingPage'));
+  const WordsPage = React.lazy(() => import('../page/WordsPage/WordsPage'));
   const NotFoundPage = React.lazy(() => import('../page/NotFoundPage/NotFoundPage'));
 
   return (
     <ContextWordsProvider>
     <Router>
       <ErrorBoundary>
-      <div className="App">
-        <Header />
-        <Suspense fallback={<div>Loading...</div>}>
+      <AppLayout>
+        <Suspense fallback={<AppLoader />}>
           <Routes>
-            <Route path={ROUTES.HOME} element={<TableWords />} />
-            <Route path={ROUTES.ADD_WORD} element={<AddWord />} />
-            <Route path={ROUTES.TRAIN} element={<Carusel />} />
-            <Route path={ROUTES.WORDS} element={<WordsCardList />} />
+            <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+            <Route path={ROUTES.HOME} element={<HomePage />} />
+            <Route path={ROUTES.ADD_WORD} element={<AddWordPage />} />
+            <Route path={ROUTES.TRAIN} element={<TrainingPage />} />
+            <Route path={ROUTES.WORDS} element={<WordsPage />} />
             <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
           </Routes>
         </Suspense>
-      <Footer />
-      </div>
+      </AppLayout>
       </ErrorBoundary>
     </Router>
     </ContextWordsProvider>

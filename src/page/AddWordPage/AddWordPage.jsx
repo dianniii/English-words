@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useWordsContext } from '../../hooks/useWordsContext';
 import useFormValidation from '../../hooks/useFormValidation';
-import styles from './AddWord.module.scss';
+import styles from './AddWordPage.module.scss';
 
-const AddWord = () => {
+const AddWordPage = () => {
     const { loading, addNewWord, isAdding } = useWordsContext();
     const [message, setMessage] = useState('');
     
@@ -99,6 +99,6 @@ const AddWord = () => {
     );
 };
 
-export default AddWord;
+export default AddWordPage;
 
 

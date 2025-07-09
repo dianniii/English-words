@@ -1,16 +1,16 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import styles from './Header.module.scss';
+import styles from './AppHeader.module.scss';
 import logo from '../assets/book_4165304.png';
-import { ROUTES } from "../routes";
+import { ROUTES } from "../constants/routes";
 
-function Header () {
+function AppHeader () {
 
     return (
         <header className={styles.headerConteiner}>
-            <Link className={styles.conteinerLogo} to={'/'}>
+            <Link className={styles.conteinerLogo} to={ROUTES.ABOUT}>
                 <img className={styles.logo} src={logo} alt="Logo"/>
-                <h1 className={styles.title}>EG</h1>
+                <h1 className={styles.title}>EngliGrow</h1>
             </Link>
             <nav>
                 <ul className={styles.nav}>
@@ -44,4 +44,4 @@ function Header () {
     )
 }
 
-export default Header;
+export default AppHeader;

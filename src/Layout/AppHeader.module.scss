@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 24px;
+    padding: 0 24px;
     background-color: $background-color-light;
 
     .conteinerLogo{
@@ -17,7 +17,7 @@
     gap: 5px;
 
     .logo{
-        height: 60px;
+        height: 50px;
         width: auto;
         margin: auto 0;
                 
@@ -38,6 +38,7 @@
     .nav{
         display: flex;
         gap: 80px;
+        margin: 0;
 
         .itemsNav{
         color: $primary-color;

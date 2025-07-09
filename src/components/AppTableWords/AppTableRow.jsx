@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import useFormValidation from '../../hooks/useFormValidation'; // Путь к вашему хуку
 import { useWordsContext } from '../../hooks/useWordsContext'; // Импорт контекста
-import styles from './Table.module.scss';
+import styles from './AppTable.module.scss';
 
-function TableRow({ word }) {
+function AppTableRow({ word }) {
   const [isEditing, setIsEditing] = useState(false);
 
   const {
@@ -137,6 +137,6 @@ function TableRow({ word }) {
   );
 }
 
-export default TableRow;
+export default AppTableRow;
 
 

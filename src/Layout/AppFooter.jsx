@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Footer.module.scss';
+import styles from './AppFooter.module.scss';
 
-function Footer() {
+function AppFooter() {
   return (
     <footer className={styles.footer}>
       <p className={styles.text}>© 2025 EngliGrow | English Word Cards</p>
@@ -9,4 +9,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default AppFooter;

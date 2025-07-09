@@ -1,9 +1,9 @@
 import useFetchWords from "../../hooks/useFetchWords";
 import WordCard from "../../components/AppWordCard/AppWordCard";
-import styles from "./WordsCardList.module.scss";
+import styles from "./WordsPage.module.scss";
 import AppLoader from "../../components/AppLoader/AppLoader";
 
-function WordsCardList() {
+function WordsPage() {
   const { words, loading } = useFetchWords();
   
   return (
@@ -19,5 +19,5 @@ function WordsCardList() {
   );
 }
 
-export default WordsCardList;
+export default WordsPage;
 

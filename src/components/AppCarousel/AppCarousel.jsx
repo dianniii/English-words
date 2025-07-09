@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import CardWrapper from "../../components/AppCardWrapper/AppWrapper";
-import WordCard from "../../components/AppWordCard/AppWordCard";
+import CardWrapper from "./AppWrapper";
+import WordCard from "../AppWordCard/AppWordCard";
 import { useWordsContext } from '../../hooks/useWordsContext';
 
-    const Carousel = () => {
+    const AppCarousel = () => {
       const [wordsLearned, setWordsLearned] = useState(0);
       const [index, setIndex] = useState(0);
       const { words } = useWordsContext();
@@ -17,7 +17,7 @@ import { useWordsContext } from '../../hooks/useWordsContext';
       const handleNext = () =>
         setIndex(prev => (prev === words.length - 1 ? 0 : prev + 1));
       return (
-        <div>
+        <>
             <CardWrapper
             onPrev={handlePrev}
             onNext={handleNext}
@@ -27,10 +27,10 @@ import { useWordsContext } from '../../hooks/useWordsContext';
           >
             <WordCard word={words[index]} onViewTranslation={handleViewTranslation} />
           </CardWrapper>
-        </div>
+        </>
       )
   };
-export default Carousel;
+export default AppCarousel;
     
 
 
