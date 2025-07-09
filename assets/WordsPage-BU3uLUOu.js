@@ -1,0 +1,1 @@
+import{u as o,j as s,A as d}from"./index-B8Qy7ctU.js";import{W as i}from"./AppWordCard-F_DqyUCz.js";const c="_cardList_12s9v_1",e={cardList:c};function p(){const{words:a,loading:t}=o();return s.jsx("div",{className:e.cardList,children:t?s.jsx(d,{}):a.map(r=>s.jsx(i,{word:r},r.id))})}export{p as default};
