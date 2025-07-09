@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://dianniii.github.io/English-words/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dianniii/English-words"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
