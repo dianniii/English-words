@@ -1,8 +1,8 @@
 @use '../../styles/varibels' as *;
 
 .conteinerError{
-    width: auto;
-    margin: $margin-top auto $margin-botton;
+    width: 90%;
+    margin: $margin-top auto 0;
     display: flex;
     justify-content: space-between;
 
