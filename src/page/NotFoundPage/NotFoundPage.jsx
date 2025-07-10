@@ -11,7 +11,7 @@ function NotFoundPage (){
             <div className={styles.infoError}>
                 <div>
                     <img src={error} alt="error404" />
-                    <h1>Упссс!</h1>
+                    <h2>Упссс!</h2>
                     <h2>Страница не найдена</h2>
                 </div>
                 <Link to={ROUTES.HOME} >

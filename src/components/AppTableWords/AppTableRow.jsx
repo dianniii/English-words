@@ -104,7 +104,7 @@ function AppTableRow({ word }) {
           onChange={handleChange}
           className={`${isEmpty(value.transcription) ? styles.invalid : ''}
                         ${errors.transcription ? styles.invalid : ''}`}
-        />
+        />  
       </td>
       <td className={styles.headerCell}>
         <input
@@ -115,7 +115,7 @@ function AppTableRow({ word }) {
           className={`${isEmpty(value.russian) ? styles.invalid : ''}
                         ${errors.russian ? styles.invalid : ''}`}
         />
-      </td>
+      </td> 
       <td className={styles.headerCell}>
         <button
           className={styles.buttonSave}

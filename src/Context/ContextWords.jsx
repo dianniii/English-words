@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetchWords from '../hooks/useFetchWords'; // импорт вашего хука
-import {ContextWords} from '../../const'; // импорт вашего контекста
+import {ContextWords} from '../constants/createContext'; // импорт вашего контекста
 
 const ContextWordsProvider = ({ children }) => {
     const { words, loading, error, isUpdating, isAdding, isDeleting, updateExistingWord, addNewWord, setIsDelete } = useFetchWords();

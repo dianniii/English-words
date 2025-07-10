@@ -50,11 +50,14 @@ const AddWordPage = () => {
             <AppLoader/>
         ) : (
         <div className={styles.container}>
-            <h1>Добавить слово</h1>
+            <h2>Добавить слово</h2>
             <div className={styles.addWord}>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.inputContainer}>
-                        <h4 className={styles.subtitle}>Английское слово</h4>
+                        <div className={styles.subtitleContainer}>
+                            <h4 className={styles.subtitle}>Английское слово</h4>
+                            <span className={styles.errorStar}>*</span>
+                        </div>
                         <input 
                             name="english"
                             value={value.english} 
@@ -65,7 +68,10 @@ const AddWordPage = () => {
                         {errors.english && <p className={styles.error}>Введите корректное английское слово</p>}
                     </div>
                     <div className={styles.inputContainer}>
-                        <h4 className={styles.subtitle}>Транскрипция</h4>
+                        <div className={styles.subtitleContainer}>
+                            <h4 className={styles.subtitle}>Транскрипция</h4>
+                            <span className={styles.errorStar}>*</span>
+                        </div>
                         <input 
                             name="transcription"
                             value={value.transcription} 
@@ -76,7 +82,10 @@ const AddWordPage = () => {
                         {errors.transcription && <p className={styles.error}>Введите корректную транскрипцию</p>}
                     </div>
                     <div className={styles.inputContainer}>
-                        <h4 className={styles.subtitle}>Перевод</h4>
+                        <div className={styles.subtitleContainer}>
+                            <h4 className={styles.subtitle}>Перевод</h4>
+                            <span className={styles.errorStar}>*</span>
+                        </div>
                         <input 
                             name="russian"
                             value={value.russian} 

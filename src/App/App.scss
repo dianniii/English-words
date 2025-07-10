@@ -1,8 +1,11 @@
     @use '../styles//varibels' as *;
 
     body{
+        font-family: $font-main;
+        font-size: $font-size-base;
         h1{
         color: $primary-color;
+        font-size: $font-size-h1;
         }
     a{
         text-decoration: none;

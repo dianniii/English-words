@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { ContextWords } from "../../const"
+import { useContext } from "react";
+import { ContextWords } from "../constants/createContext";
 
 export const useWordsContext = () =>{
     const context = useContext(ContextWords);

@@ -7,10 +7,21 @@
     align-items: center; 
     justify-content: center; 
 
-    h1 {
+    h2 {
+        color: $primary-color;
         text-align: center;
+        font-size: $font-size-h2;
+        font-weight: 700;
         margin-bottom: 20px;
-        cursor: none;
+    }
+    .subtitleContainer{
+        display: flex;
+    }
+    .errorStar{
+        color: red;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: 5px;
     }
 
     .message{
@@ -27,23 +38,26 @@
 
             .inputContainer {
                 width: 100%;
-                margin-bottom: 15px;
+                margin-bottom: 5px;
 
                 input{
                     width: 95%;
                 }
                 .subtitle {
-                    font-weight: bold;
+                    font-weight: 600;
                     margin-bottom: 5px;
                     color: $primary-color;
                 }
-                .invalid{
-                    border: 2px solid $invalid-border-color;
+                .invalid {
+                    border: 1.5px solid rgba(255, 0, 0, 0.8); 
                     outline: none;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 }
+
                 .error{
                     color: $secondary-color;
-                    font-weight: 600;
+                    font-weight: 500;
+                    margin: 0px 0;
                 }
             }
 

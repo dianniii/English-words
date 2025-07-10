@@ -6,12 +6,15 @@
     display: flex;
     justify-content: space-between;
 
+    h2{
+        font-size: $font-size-h2;
+        color: $primary-color;
+    }
     .infoError{
     display: flex;
     flex-direction: column;
     margin-top: 100px;
     justify-content: space-between;
-    color: $primary-color;
     }
     .backHome{
         margin: 12px 0;

@@ -4,7 +4,9 @@
         margin: $margin-top auto $margin-botton;
 
         .title{
-        padding: 12px 24px;
+        font-size: $font-size-h2;
+        padding: 10px 24px;
+        font-weight: 700;
         color: $primary-color;
         }
 }

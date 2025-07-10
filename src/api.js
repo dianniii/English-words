@@ -22,13 +22,10 @@ export const fetchWords = async () => {
     }
 };
 
-
-// отправка данных
-
 // Отправка нового слова
 export const postWord = async (newWordData) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/words/add`, {  // Исправил URL
+        const response = await fetch(`${API_BASE_URL}/words/add`, {  
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,7 +48,7 @@ export const postWord = async (newWordData) => {
 export const deleteWord = async (wordId) => {
     try {
         console.log('Attempting to delete word with ID:', wordId);
-        const response = await fetch(`${API_BASE_URL}/words/${wordId}`, { // Исправил шаблонную строку
+        const response = await fetch(`${API_BASE_URL}/words/${wordId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -59,7 +56,7 @@ export const deleteWord = async (wordId) => {
         });
 
         if (!response.ok) {
-            const errorMessage = await response.text(); // Получаем текст ошибки
+            const errorMessage = await response.text(); 
             throw new Error(`HTTP error! status: ${response.status}, message: ${errorMessage}`);
         }
 
