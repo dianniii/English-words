@@ -1,12 +1,52 @@
-# React + Vite
+# English Word Cards (React App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Интерактивное приложение на React для изучения английских слов по карточкам.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Возможности
 
-## Expanding the ESLint configuration
+ - **Таблица слов**: управляйте своей таблицей, добавляя, изменяя и удаляя слова
+ - **Добавление слов**: используйте отдельную страницу для добавления новых слов в вашу таблицу
+ - **Тренировка**: тренируйтесь по карточкам, запоминая перевод и проверяя себя
+ - **Обзор слов**: посмотрите и повторите все слова, которые вы уже знаете, на специальной странице
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Технологии
+
+- **React**: используется для построения пользовательского интерфейса
+- **React Router**: упрощает навигацию внутри приложения
+- **SCSS-модули**: предоставляют возможность организации стилей на уровне компонентов
+- **Vite-сборщик**: быстрый сборщик, который улучшает производительность и ускоряет разработку
+- **API** - URL: 'https://itgirlschool.justmakeit.ru/api/words', обеспечивает доступ к данным по словам и поддерживает различные методы запроса
+
+## ⏯ Запуск проекта
+
+1. Установите зависимости:
+
+```bash
+npm install
+```
+
+2. Запустите режим разработки:
+
+```bash
+npm run dev 
+```
+
+Приложение будет доступно по адресу http://localhost:3000/EngliGrow/.
+
+## ⚙️ Сборка
+
+```bash
+npm run build
+```
+
+Архив с готовой сборкой появится в директории `build/`.
+
+## 🚢 Деплой на GitHub Pages
+
+```bash
+npm run deploy
+```
+
+---
