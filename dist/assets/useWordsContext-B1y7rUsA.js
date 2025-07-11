@@ -1,1 +1,0 @@
-import{r as o,C as r}from"./index-Bu5QavFh.js";const s=()=>{const t=o.useContext(r);if(!t)throw new Error("useWordsContext должен использоваться в рамках ContextWordsProvider");return t};export{s as u};
