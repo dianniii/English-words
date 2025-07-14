@@ -48,10 +48,10 @@ export const postWord = async (newWordData) => {
 export const deleteWord = async (wordId) => {
     try {
         console.log('Attempting to delete word with ID:', wordId);
-        const response = await fetch(`${API_BASE_URL}/words/${wordId}`, {
-            method: 'DELETE',
+        const response = await fetch(`/api/words/${wordId}/delete`, {
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json;charset=utf-8'
             }
         });
 
@@ -68,28 +68,30 @@ export const deleteWord = async (wordId) => {
 };
 
 // обновление данных
-export const updateWord = async (updatedWordData, id) => {
-    try {
-        id = Number(id);
-
-        const response = await fetch(`${API_BASE_URL}/words/${id}/update`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedWordData)
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const newWord = await response.json();
-        return newWord;
-    } catch (error) {
-        console.error('Error when updating word:', error);
-        throw new Error(`Failed to update word: ${error.message}`);
+export const updateWord = async (updatedWordData, wordId) => {
+  try {
+    wordId = Number(wordId);
+    if (isNaN(wordId)) {
+      throw new Error('Invalid ID provided');
     }
+    const response = await fetch(`/api/words/${wordId}/update`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(updatedWordData)
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const newWord = await response.json();
+    return newWord;
+  } catch (error) {
+    console.error('Error when updating word:', error);
+    throw new Error(`Failed to update word: ${error.message}`);
+  }
 };
 
 

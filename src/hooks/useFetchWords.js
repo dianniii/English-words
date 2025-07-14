@@ -25,7 +25,7 @@ const useFetchWords = () => {
         loadWords();
     }, []);
     
-    const updateExistingWord = async (wordId, updatedWordData) => {
+    const updateExistingWord = async (updatedWordData,wordId) => {
         setIsUpdating(true);
         try {
             const updatedWord = await updateWord(wordId, updatedWordData);

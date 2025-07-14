@@ -3,11 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": {
+    "/search": {
+      "target": "<https://www.google.com>",
+      "changeOrigin": true
+    }
+},
   "homepage": "n",
   "repository": {
     "type": "git",
     "url": "git@github.com:dianniii/English-words"
   },
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
